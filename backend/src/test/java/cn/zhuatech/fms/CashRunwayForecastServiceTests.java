@@ -8,9 +8,15 @@ import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class CashRunwayForecastServiceTests {
     private final CashRunwayForecastService service = new CashRunwayForecastService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void flagsCriticalShortCashRunway() {
         var result = service.forecast(new CashRunwayForecastService.Request(
@@ -23,6 +29,9 @@ class CashRunwayForecastServiceTests {
         assertEquals("CRITICAL", result.status());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void recognizesPositiveMonthlyCashFlow() {
         var result = service.forecast(new CashRunwayForecastService.Request(

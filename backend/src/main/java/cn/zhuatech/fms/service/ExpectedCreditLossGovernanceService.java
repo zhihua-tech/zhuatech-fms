@@ -11,8 +11,14 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ExpectedCreditLossGovernanceService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Assessment assess(Request request) {
         long exposure = Math.max(0, request.receivableCents() - request.collateralCents());
         long allowance = BigDecimal.valueOf(exposure)
@@ -34,13 +40,22 @@ public class ExpectedCreditLossGovernanceService {
                 List.copyOf(blockers), List.copyOf(actions));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String customerCode, @Min(0) long receivableCents,
                           @Min(0) long collateralCents, @Min(0) int overdueDays,
                           @Min(0) @Max(10000) int probabilityOfDefaultBps,
                           @Min(0) @Max(10000) int lossGivenDefaultBps,
                           boolean disputed, boolean creditReviewComplete,
                           boolean ownerApproved) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Assessment(String customerCode, long exposureCents, long allowanceCents,
                              Decision decision, List<String> blockers, List<String> actions) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum Decision { BOOK, REVIEW, HOLD }
 }

@@ -11,8 +11,14 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class CashRunwayForecastService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result forecast(Request request) {
         BigDecimal expectedCollections = request.receivablesExpected()
             .multiply(request.collectionRate()).setScale(2, RoundingMode.HALF_UP);
@@ -39,6 +45,9 @@ public class CashRunwayForecastService {
             runwayMonths, quarterEndCash, status, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String businessUnit,
                           @DecimalMin("0") BigDecimal openingCash,
                           @DecimalMin("0") BigDecimal monthlyInflow,
@@ -48,6 +57,9 @@ public class CashRunwayForecastService {
                           @DecimalMin("0") @DecimalMax("1") BigDecimal collectionRate,
                           @DecimalMin("0") BigDecimal minimumReserve) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String businessUnit, BigDecimal expectedCollections,
                          BigDecimal monthlyNetBurn, BigDecimal runwayMonths,
                          BigDecimal projectedQuarterEndCash, String status,

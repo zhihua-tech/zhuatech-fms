@@ -4,9 +4,15 @@ package cn.zhuatech.fms.service;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class ExpectedCreditLossGovernanceServiceTest {
     private final ExpectedCreditLossGovernanceService service = new ExpectedCreditLossGovernanceService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void booksApprovedAllowance() {
         var result = service.assess(new ExpectedCreditLossGovernanceService.Request(
                 "CUS-001", 1_000_000, 0, 30, 1000, 4000, false, true, true));
@@ -14,6 +20,9 @@ class ExpectedCreditLossGovernanceServiceTest {
         assertThat(result.decision()).isEqualTo(ExpectedCreditLossGovernanceService.Decision.BOOK);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void holdsUnreviewedOverdueExposure() {
         var result = service.assess(new ExpectedCreditLossGovernanceService.Request(
                 "CUS-002", 2_000_000, 500_000, 120, 0, 6000, true, false, false));

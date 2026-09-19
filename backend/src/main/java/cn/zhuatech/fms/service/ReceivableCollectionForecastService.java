@@ -8,9 +8,15 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ReceivableCollectionForecastService {
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result forecast(Request request) {
         double expectedDueCollection = request.dueWithin30Days() * request.historicalCollectionRate();
         double disputeDiscount = request.disputedAmount() * 0.7;
@@ -32,8 +38,14 @@ public class ReceivableCollectionForecastService {
         return new Result(round(expectedCollection), round(liquidityGap), round(overdueRate), riskScore, status, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private double round(double value) { return Math.round(value * 100.0) / 100.0; }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(
             @DecimalMin("0.01") double totalReceivable,
             @DecimalMin("0") double dueWithin30Days,
@@ -45,6 +57,9 @@ public class ReceivableCollectionForecastService {
             @DecimalMin("0.01") double targetCollection
     ) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(double expectedCollection30Days, double liquidityGap, double overdueRate,
                          int riskScore, String status, List<String> actions) {}
 }

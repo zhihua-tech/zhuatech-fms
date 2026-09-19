@@ -7,9 +7,15 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class ReceivableCollectionForecastServiceTests {
     private final ReceivableCollectionForecastService service = new ReceivableCollectionForecastService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void marksLargeCollectionGapCritical() {
         var result = service.forecast(new ReceivableCollectionForecastService.Request(
@@ -18,6 +24,9 @@ class ReceivableCollectionForecastServiceTests {
         assertTrue(result.liquidityGap() > 200_000);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void keepsStrongCollectionPlanHealthy() {
         var result = service.forecast(new ReceivableCollectionForecastService.Request(

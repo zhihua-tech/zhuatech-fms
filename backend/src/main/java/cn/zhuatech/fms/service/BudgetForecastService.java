@@ -11,8 +11,14 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class BudgetForecastService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result forecast(Request request) {
         BigDecimal progress = BigDecimal.valueOf(request.progressPercent()).divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
         BigDecimal forecastTotal = request.actualToDate().divide(progress, 2, RoundingMode.HALF_UP).add(request.committedAmount());
@@ -29,11 +35,17 @@ public class BudgetForecastService {
         return new Result(forecastTotal, variance, overrunPercent.setScale(2, RoundingMode.HALF_UP), level, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@DecimalMin("0") BigDecimal budgetAmount,
                           @DecimalMin("0") BigDecimal actualToDate,
                           @DecimalMin("0") BigDecimal committedAmount,
                           @DecimalMin("0.01") @DecimalMax("100") double progressPercent,
                           @Min(0) int remainingMonths) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(BigDecimal forecastTotal, BigDecimal variance,
                          BigDecimal overrunPercent, String level, List<String> actions) {}
 }

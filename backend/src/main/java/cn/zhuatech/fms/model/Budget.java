@@ -4,6 +4,9 @@ package cn.zhuatech.fms.model;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Entity
 @Table(name="fms_budget")
 public class Budget extends BaseEntity {
@@ -16,7 +19,37 @@ public class Budget extends BaseEntity {
     @Column(nullable=false,precision=16,scale=2) private BigDecimal actualAmount;
     @Column(nullable=false,length=20) private String status;
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     protected Budget() {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Budget(String no,String department,String subject,int year,BigDecimal annual,BigDecimal occupied,BigDecimal actual,String status){this.budgetNo=no;this.department=department;this.subjectName=subject;this.fiscalYear=year;this.annualAmount=annual;this.occupiedAmount=occupied;this.actualAmount=actual;this.status=status;}
-    public String getBudgetNo(){return budgetNo;} public String getDepartment(){return department;} public String getSubjectName(){return subjectName;} public int getFiscalYear(){return fiscalYear;} public BigDecimal getAnnualAmount(){return annualAmount;} public BigDecimal getOccupiedAmount(){return occupiedAmount;} public BigDecimal getActualAmount(){return actualAmount;} public String getStatus(){return status;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public String getBudgetNo(){return budgetNo;} /**
+                                                   * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                   */
+public String getDepartment(){return department;} /**
+                                                                                                     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                     */
+public String getSubjectName(){return subjectName;} /**
+                                                                                                                                                         * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                                         */
+public int getFiscalYear(){return fiscalYear;} /**
+                                                                                                                                                                                                        * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                                                                                        */
+public BigDecimal getAnnualAmount(){return annualAmount;} /**
+                                                                                                                                                                                                                                                                  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                                                                                                                                                  */
+public BigDecimal getOccupiedAmount(){return occupiedAmount;} /**
+                                                                                                                                                                                                                                                                                                                                * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                                                                                                                                                                                                                */
+public BigDecimal getActualAmount(){return actualAmount;} /**
+                                                                                                                                                                                                                                                                                                                                                                                          * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                                                                                                                                                                                                                                                                          */
+public String getStatus(){return status;}
 }
