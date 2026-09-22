@@ -32,5 +32,5 @@ class FmsApiIntegrationTests {
     /**
      * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
      */
-    @Test void anonymousRequestIsDenied()throws Exception{mvc.perform(get("/api/fms/accounts")).andExpect(status().isForbidden());}
+    @Test void anonymousRequestIsDenied()throws Exception{mvc.perform(get("/api/fms/accounts")).andExpect(status().isUnauthorized());}
 }
