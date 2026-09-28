@@ -2,6 +2,8 @@
 
 # ZhuaTech FMS
 
+[简体中文](README.md) | [English](README.en.md)
+
 ### 知华科技财务管理系统 · 社区源码版
 
 资金管理　/　应收应付　/　预算控制　/　费用报销　/　经营分析
